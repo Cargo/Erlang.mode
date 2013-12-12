@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+	<recognition>
+		<extension>erl</extension>
+		<extension>hrl</extension>
+		<extension>escript</extension>
+		<regex>^\%+\s?-\*-(.*?)mode:\s?erlang(.*?)-\*-(.*?)[\n\r]</regex>
+		<regex>^-(module|record|define)\(([a-z][a-zA-Z0-9@_]*)\b</regex>
+	</recognition>
+</settings>
