@@ -1,29 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE syntax SYSTEM "symbol.dtd">
 <symbols>
-	<symbol id="Modules" font-weight="normal" font-style="normal" image="SymbolM" indentation="1">
+    <blocks>
+        <beginregex>{</beginregex>
+        <endregex>}</endregex>
+    </blocks>
+	<symbol id="Modules" font-weight="normal" font-style="normal" image="SymbolM" indentation="1" ignoreblocks="yes">
 		<regex>-module\s*\(([a-zA-Z0-9@_]*)\b</regex>
 	</symbol>
-	<symbol id="Records" font-weight="normal" font-style="normal" image="Symbol#" indentation="1">
+	<symbol id="Records" font-weight="normal" font-style="normal" image="Symbol#" indentation="1" ignoreblocks="yes">
 		<regex>-record\s*\(([a-zA-Z0-9@_]*)\b</regex>
 	</symbol>
-	<symbol id="Macros" font-weight="normal" font-style="normal" image="SymbolK" indentation="1">
+	<symbol id="Macros" font-weight="normal" font-style="normal" image="SymbolK" indentation="1" ignoreblocks="yes">
 		<regex>-define\s*\(([A-Za-z][A-Za-z0-9_]*)\b</regex>
 	</symbol>
-	<symbol id="Inclusion" font-weight="normal" font-style="normal" image="SymbolH" indentation="1">
+	<symbol id="Inclusion" font-weight="normal" font-style="normal" image="SymbolH" indentation="1" ignoreblocks="yes">
 		<regex>-include(?:_lib)?\s*\((.+)\)</regex>
 		<postprocess>
 			<find>[\s\n\r"]</find>
 			<replace></replace>
 		</postprocess>
 	</symbol>
-	<symbol id="Functions" font-weight="normal" font-style="normal" image="SymbolF()" indentation="1">
-		<regex>^(\w+\(.*?*\))\s*-></regex>
+	<symbol id="Functions" font-weight="normal" font-style="normal" image="SymbolF()" indentation="1" ignoreblocks="yes">
+		<regex>(?:[\n\r]|^)([A-Za-z0-9_]*\(.*?\))\s*-&gt;</regex>
 		<postprocess>
 			<find>\s*when.*</find>
 			<replace></replace>
+			<find>&lt;&lt;(?:.*?)&gt;&gt;</find>
+			<replace>_</replace>
 			<find>\{[^}]*\}</find>
-			<replace></replace>
+			<replace>_</replace>
 			<find>^([^(]+)\(\s*\)</find>
 			<replace>\1/0</replace>
 			<find>(?=\()[^,]*</find>
@@ -75,7 +81,7 @@
 	<symbol id="Comment Marks" font-weight="bold" font-style="normal" image="SymbolMark" indentation="0" ignoreblocks="yes" show-in-comments="yes">
 		<regex>[%]+- mark[\t ]*(?:-(?=[\n\r]))?([^\n\r]*)[\n\r]</regex>
 	</symbol>
-	<symbol id="Pragma marks" font-weight="normal" font-style="normal" image="SymbolMark" indentation="0" show-in-comments="yes">
+	<symbol id="Pragma marks" font-weight="normal" font-style="normal" image="SymbolMark" indentation="0" ignoreblocks="yes" show-in-comments="yes">
 		<regex>[%]+\s*!(.+)[\n\r]</regex>
 	</symbol>
 </symbols>

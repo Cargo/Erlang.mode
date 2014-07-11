@@ -12,29 +12,29 @@
 			<keywords id="Atoms" scope="constant.numeric.keyword">
 				<regex>\b([a-z][a-zA-Z0-9@_]*)\b</regex>
 			</keywords>
-			<keywords id="Variables" font-weight="bold" scope="language.variable">
+			<keywords id="Variables" scope="language.variable">
 				<regex>\b([_]?[A-Z][a-zA-Z0-9@_]*)\b</regex>
 				<regex>\b(_)\b</regex>
 			</keywords>
-			<keywords id="Records" font-weight="bold" scope="language.function">
+			<keywords id="Records" scope="language.function">
 				<regex>#([a-z][a-zA-Z0-9@_]*)\b</regex>
 				<regex>-record\s*\(([a-zA-Z0-9@_]*)\b</regex>
 			</keywords>
-			<keywords id="Macros" font-weight="bold" scope="language.function">
+			<keywords id="Macros" scope="language.function">
 				<regex>\?([A-Za-z][A-Za-z0-9_]*)</regex>
 				<regex>-(?:define|undef|ifdef|ifndef)\s*\(([A-Za-z][A-Za-z0-9_]*)\b</regex>
 			</keywords>
-			<keywords id="Function Calls" font-weight="bold" font-style="italic" scope="language.function">
+			<keywords id="Function Calls" scope="language.function">
 				<regex>([0-9a-zA-Z_-]+(?::?)[0-9a-zA-Z_-]+)\(</regex>
 				<regex>([^\?][0-9a-zA-Z_-]+)\(</regex>
 			</keywords>
 			<keywords id="Processors and Bit Syntax" scope="markup.processing.languageswitch">
 				<regex>((&lt;&lt;)|(>>)|[#\?:])</regex>
 			</keywords>
-			<keywords id="Separators" font-weight="bold" casesensitive="no" useforautocomplete="no" scope="language.operator">
+			<keywords id="Separators" casesensitive="no" useforautocomplete="no" scope="language.operator">
 				<regex>(->)</regex>
 			</keywords>
-			<keywords id="List Comprehensions" font-weight="bold" casesensitive="no" useforautocomplete="no" scope="language.operator">
+			<keywords id="List Comprehensions" casesensitive="no" useforautocomplete="no" scope="language.operator">
 				<regex>(&lt;\-)</regex>
 				<regex>(\|\|)</regex>
 			</keywords>
@@ -70,7 +70,7 @@
 				<string>when</string>
 				<string>xor</string>
 			</keywords>
-			<keywords id="Built-in Functions" font-weight="bold" font-style="italic" useforautocomplete="yes" scope="keyword">
+			<keywords id="Built-in Functions" useforautocomplete="yes" scope="keyword">
 				<regex>\b(abs)(?:\()</regex>
 				<regex>\b(adler32)(?:\()</regex>
 				<regex>\b(adler32_combine)(?:\()</regex>
@@ -236,7 +236,7 @@
 				<regex>\b(whereis)(?:\()</regex>
 				<regex>\b(yield)(?:\()</regex>
 			</keywords>
-			<keywords id="Functions" font-weight="bold" font-style="italic" casesensitive="yes" useforautocomplete="yes" scope="keyword">
+			<keywords id="Functions" casesensitive="yes" useforautocomplete="yes" scope="keyword">
 				<string>acos</string>
 				<string>asin</string>
 				<string>atan</string>
@@ -259,7 +259,7 @@
 				<string>parse_transform</string>
 				<string>undefined_function</string>
 			</keywords>
-			<keywords id="Directives" font-weight="bold" font-style="italic" scope="keyword">
+			<keywords id="Directives" scope="keyword">
 				<regex>(-compile)\(</regex>
 				<regex>(-define)\(</regex>
 				<regex>(-else)\(</regex>
@@ -279,8 +279,9 @@
 				<regex>(-doc)\(</regex>
 				<regex>(-extends)\(</regex>
 				<regex>(-behaviour)\(</regex>
+				<!-- @TODO Handle -behavior, -type, -callback, and -spec -->
 			</keywords>
-			<keywords id="Processes" font-weight="bold" font-style="italic" casesensitive="yes" useforautocomplete="yes" scope="keyword">
+			<keywords id="Processes" casesensitive="yes" useforautocomplete="yes" scope="keyword">
 				<string>creation</string>
 				<string>current_function</string>
 				<string>dictionary</string>
@@ -306,7 +307,7 @@
 				<string>trap_exit</string>
 				<string>waiting</string>
 			</keywords>
-			<keywords id="Ports" font-weight="bold" font-style="italic" casesensitive="yes" useforautocomplete="yes" scope="keyword">
+			<keywords id="Ports" casesensitive="yes" useforautocomplete="yes" scope="keyword">
 				<string>command</string>
 				<string>count_in</string>
 				<string>count_out</string>
@@ -319,7 +320,7 @@
 				<string>owner</string>
 				<string>packeting</string>
 			</keywords>
-			<keywords id="Nodes" font-weight="bold" font-style="italic" casesensitive="yes" useforautocomplete="yes" scope="keyword">
+			<keywords id="Nodes" casesensitive="yes" useforautocomplete="yes" scope="keyword">
 				<string>atom_table</string>
 				<string>communicating</string>
 				<string>creation</string>
@@ -347,7 +348,7 @@
 				<string>runtime</string>
 				<string>wall_clock</string>
 			</keywords>
-			<keywords id="Reserved" font-weight="bold" font-style="italic" casesensitive="yes" useforautocomplete="yes" scope="keyword">
+			<keywords id="Reserved" casesensitive="yes" useforautocomplete="yes" scope="keyword">
 				<string>apply_lambda</string>
 				<string>module_info</string>
 				<string>module_lambdas</string>
@@ -355,14 +356,14 @@
 				<string>record_index</string>
 				<string>record_info</string>
 			</keywords>
-			<keywords id="Extras" font-weight="bold" font-style="italic" casesensitive="yes" useforautocomplete="yes" scope="keyword">
+			<keywords id="Extras" casesensitive="yes" useforautocomplete="yes" scope="keyword">
 				<string>badarg</string>
 				<string>nocookie</string>
 				<string>false</string>
 				<string>fun</string>
 				<string>true</string>
 			</keywords>
-			<keywords id="Signals" font-weight="bold" font-style="italic" casesensitive="yes" useforautocomplete="yes" scope="keyword">
+			<keywords id="Signals" casesensitive="yes" useforautocomplete="yes" scope="keyword">
 				<string>badsig</string>
 				<string>kill</string>
 				<string>killed</string>
@@ -370,7 +371,7 @@
 				<string>normal</string>
 			</keywords>
 		</default>
-		<state id="SingleComment" type="comment" font-style="italic" scope="comment.single">
+		<state id="SingleComment" type="comment" scope="comment.single">
 			<begin>
 				<regex>%</regex>
 			</begin>
