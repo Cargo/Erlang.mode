@@ -26,12 +26,12 @@
 		<postprocess>
 			<find>\s*when.*</find>
 			<replace></replace>
-			<find>&lt;&lt;(?:.*?)&gt;&gt;</find>
+			<find>&lt;&lt;.*?&gt;&gt;</find>
 			<replace>_</replace>
 			<find>\{[^}]*\}</find>
 			<replace>_</replace>
-			<find>^([^(]+)\(\s*\)</find>
-			<replace>\1/0</replace>
+			<find>\b(\(\s*\))</find>
+			<replace>/0</replace>
 			<find>(?=\()[^,]*</find>
 			<replace>,</replace>
 			<find>,[^,]*\).*</find>
